@@ -36,6 +36,10 @@ import { AppState } from './app.service';
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
         Barrel
       </a>
+      <a [routerLink]=" ['./click-example-page'] "
+        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+        Click Example
+      </a>
       <a [routerLink]=" ['./about'] "
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
         About
@@ -65,7 +69,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     public appState: AppState
-  ) {}
+  ) { }
 
   public ngOnInit() {
     console.log('Initial App State', this.appState.state);

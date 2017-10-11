@@ -1,0 +1,4 @@
+<h1>Click Example</h1>
+
+<search-bar (search)="search($event)" [query]="''"></search-bar>
+<result-table [timesOfSwitchMap]="timesOfSwitchMap$|async" [timesOfMergeMap]="timesOfMergeMap$|async" [timesOfDebounce]="timesOfDebounce$|async"></result-table>

@@ -1,0 +1,8 @@
+<form autocomplete="off">
+
+    <input [value]="query" (input)="query = $event.target.value" placeholder="String to Search" autofocus>
+
+    <button (click)="search.emit(query)">Submit Value</button>
+</form>
+
+<pre>string to dispatch = {{ query }}</pre>
