@@ -21,7 +21,6 @@ export const SEARCH_SCHEDULER = new InjectionToken<Scheduler>(
     'Search Scheduler'
 );
 
-
 @Injectable()
 export class CounterEffects {
     @Effect()
@@ -29,11 +28,11 @@ export class CounterEffects {
         .ofType<counter.Search>(counter.SEARCH)
         // .debounceTime(this.debounce, this.scheduler ||. async)
         .map((action) => action.payload)
-        .switchMap((query) => {
+        .switchMap((id) => {
             return this.counterService
-                .count()
+                .count(id)
                 .map((result) => new counter.SearchCompleteOfSwitchMap(result))
-                .catch(() => of(new counter.SearchCompleteOfSwitchMap('')));
+                .catch(() => of(new counter.SearchCompleteOfSwitchMap(1)));
         });
 
     @Effect()
@@ -41,11 +40,11 @@ export class CounterEffects {
         .ofType<counter.Search>(counter.SEARCH)
         // .debounceTime(this.debounce, this.scheduler ||. async)
         .map((action) => action.payload)
-        .mergeMap((query) => {
+        .mergeMap((id) => {
             return this.counterService
-                .count()
+                .count(id)
                 .map((result) => new counter.SearchCompleteOfMergeMap(result))
-                .catch(() => of(new counter.SearchCompleteOfMergeMap('')));
+                .catch(() => of(new counter.SearchCompleteOfMergeMap(null)));
         });
 
     @Effect()
@@ -53,11 +52,11 @@ export class CounterEffects {
         .ofType<counter.Search>(counter.SEARCH)
         .debounceTime(3000)
         .map((action) => action.payload)
-        .switchMap((query) => {
+        .switchMap((id) => {
             return this.counterService
-                .count()
+                .count(id)
                 .map((result) => new counter.SearchCompleteOfDebounce(result))
-                .catch(() => of(new counter.SearchCompleteOfDebounce('')));
+                .catch(() => of(new counter.SearchCompleteOfDebounce(null)));
         });
 
     constructor(

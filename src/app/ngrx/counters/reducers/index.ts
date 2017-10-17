@@ -35,3 +35,18 @@ export const getTimesOfDebounce = createSelector(
     getCounterEntitiesState,
     fromCounters.getTimesOfDebounce
 );
+
+export const getAcceptedNumberOfActions = createSelector(
+    getCounterEntitiesState,
+    fromCounters.getAcceptedNumberOfActions
+);
+
+export const getStatusOfSwitchMap = createSelector(
+    getCounterEntitiesState,
+    fromCounters.getStatusOfSwitchMap
+);
+
+export const getStatusOfMergeMap = createSelector(
+    getCounterEntitiesState,
+    fromCounters.getStatusOfMergeMap
+);

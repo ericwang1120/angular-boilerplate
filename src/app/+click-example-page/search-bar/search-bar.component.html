@@ -1,8 +1,15 @@
-<form autocomplete="off">
+<div class="row">
+    <div class="col">
+        <form autocomplete="off">
+            <div class="form-group">
+                <input [value]="query" (input)="interval = $event.target.value" placeholder="Set interval" autofocus>ms
+                <button (click)="sendActions(interval)">Send Actions</button>
+            </div>
+        </form>
+    </div>
+</div>
 
-    <input [value]="query" (input)="query = $event.target.value" placeholder="String to Search" autofocus>
-
-    <button (click)="search.emit(query)">Submit Value</button>
-</form>
-
-<pre>string to dispatch = {{ query }}</pre>
+<!-- <div *ngIf="timesOfLoop==0">No action is sent</div>
+<div *ngIf="timesOfLoop!=0">
+    The No.{{timesOfLoop}} action is sent
+</div> -->

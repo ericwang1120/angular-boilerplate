@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" [routerLink]="['/']">Blog Demo</a>
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"  data-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div [ngbCollapse]="isCollapsed" class="dropdown-menu dropdown-menu-right bg-dark">
+        <li *ngFor="let link of linkList">
+            <a (click)="isCollapsed = !isCollapsed" class="nav-link text-light" [routerLink]="link.linkPath" [routerLinkActive]="['router-link-active']"
+                [routerLinkActiveOptions]="{exact:true}">{{link.linkName}}
+            </a>
+        </li>
+    </div>
+
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" *ngFor="let link of linkList">
+                <a class="nav-link text-light" [routerLink]="link.linkPath" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">{{link.linkName}}</a>
+            </li>
+        </ul>
+    </div>
+</nav>

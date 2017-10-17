@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Observable';
 import {
   Component,
   Input,
@@ -11,5 +12,12 @@ import {
 })
 export class SearchBarComponent {
   @Input('query') public query: string;
-  @Output() public search = new EventEmitter<string>();
+  @Input('timesOfLoop') public timesOfLoop = 0;
+  @Output() public onSendActions = new EventEmitter<number>();
+
+  public interval = 500;
+
+  public sendActions(interval: number) {
+    this.onSendActions.emit(interval);
+  }
 }

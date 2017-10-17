@@ -1,4 +1,13 @@
-<h1>Click Example</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1>Stream Thinking of rxjs</h1>
+        </div>
+    </div>
 
-<search-bar (search)="search($event)" [query]="''"></search-bar>
-<result-table [timesOfSwitchMap]="timesOfSwitchMap$|async" [timesOfMergeMap]="timesOfMergeMap$|async" [timesOfDebounce]="timesOfDebounce$|async"></result-table>
+    <search-bar (onSendActions)="sendActions($event)" [query]="''"></search-bar>
+
+    <result-table [acceptedNumberOfActions]="acceptedNumberOfActions$|async" [timesOfSwitchMap]="timesOfSwitchMap$|async" [timesOfMergeMap]="timesOfMergeMap$|async"
+        [timesOfDebounce]="timesOfDebounce$|async" [statusOfMergeMap]="statusOfMergeMap$|async" [statusOfSwitchMap]="statusOfSwitchMap$|async"
+        [totalTimesOfLoop]="totalTimesOfLoop"></result-table>
+</div>

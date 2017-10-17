@@ -18,48 +18,38 @@ import { AppState } from './app.service';
   styleUrls: [
     './app.component.css'
   ],
-  template: `
-    <nav>
-      <a [routerLink]=" ['./'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Index
-      </a>
-      <a [routerLink]=" ['./home'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Home
-      </a>
-      <a [routerLink]=" ['./detail'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Detail
-      </a>
-      <a [routerLink]=" ['./barrel'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Barrel
-      </a>
-      <a [routerLink]=" ['./click-example-page'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Click Example
-      </a>
-      <a [routerLink]=" ['./about'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        About
-      </a>
-    </nav>
+  template:
+
+
+  /*
+  <a [routerLink]=" ['./'] "
+    routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+    Index
+  </a>
+  <a [routerLink]=" ['./home'] "
+    routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+    Home
+  </a>
+  <a [routerLink]=" ['./detail'] "
+    routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+    Detail
+  </a>
+  <a [routerLink]=" ['./barrel'] "
+    routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+    Barrel
+  </a>
+  <a [routerLink]=" ['./about'] "
+    routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+    About
+  </a>
+ */
+  `  
+    <nav-bar>
+    </nav-bar>
 
     <main>
       <router-outlet></router-outlet>
     </main>
-
-    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
-
-    <footer>
-      <span>WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
-      <div>
-        <a [href]="url">
-          <img [src]="angularclassLogo" width="25%">
-        </a>
-      </div>
-    </footer>
   `
 })
 export class AppComponent implements OnInit {

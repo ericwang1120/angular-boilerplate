@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class CounterService {
-  public count(): Observable<string> {
-    return of('success').delay(1000);
+  public count(id): Observable<number> {
+    return of(id).delay(2000);
   }
 }

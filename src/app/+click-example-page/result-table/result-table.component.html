@@ -1,12 +1,33 @@
-<table>
-    <tr>
-        <th>timesOfSwitchMap</th>
-        <th>timesOfMergeMap</th>
-        <th>timesOfDebounce</th>
-    </tr>
-    <tr>
-        <td>{{timesOfSwitchMap}}</td>
-        <td>{{timesOfMergeMap}}</td>
-        <td>{{timesOfDebounce}}</td>
-    </tr>
-</table>
+<div class="row">
+    <div class="col-6">
+        <h1>Merge Map</h1>
+        <table class="table">
+            <thead class="thead-default">
+                <tr>
+                    <th>No.</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tr *ngFor="let status of statusOfMergeMap">
+                <td>{{status.id}}</td>
+                <td [ngClass]="{'text-success':status.status==='Success','text-warning':status.status==='Processing','text-danger':status.status==='Cancelled'}">{{status.status}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="col-6">
+        <h1>Switch Map</h1>
+        <table class="table">
+            <thead class="thead-default">
+                <tr>
+                    <th>No.</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tr *ngFor="let status of statusOfSwitchMap">
+                <td>{{status.id}}</td>
+                <td [ngClass]="{'text-success':status.status==='Success','text-warning':status.status==='Processing','text-danger':status.status==='Cancelled'}">{{status.status}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

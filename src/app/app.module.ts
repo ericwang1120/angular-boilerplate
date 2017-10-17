@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {
   NgModule,
@@ -31,11 +32,10 @@ import { HomeComponent } from './home';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
+import { MODULES } from './app.imports';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -65,6 +65,7 @@ type StoreType = {
    * Import Angular's modules.
    */
   imports: [
+    ...MODULES,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -73,8 +74,7 @@ type StoreType = {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules
     }),
-    StoreModule.forRoot([]),
-    EffectsModule.forRoot([]),
+
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.
