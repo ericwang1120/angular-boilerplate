@@ -1,0 +1,28 @@
+<div class="row category-list-container category-list-background">
+    <ul class="col">
+        <li class="" *ngFor="let category of categoryList.slice(0,7)">
+            <a [routerLink]="''">
+                {{ category.title}}
+            </a>
+        </li>
+    </ul>
+    <ul class="col">
+        <li *ngFor="let category of categoryList.slice(7,14)">
+            <a [routerLink]="''">
+                {{ category.title}}
+            </a>
+        </li>
+    </ul>
+    <ul class="col">
+        <li *ngFor="let category of categoryList.slice(14,20)">
+            <a [routerLink]="''">
+                {{ category.title}}
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="''">
+                View all categories
+            </a>
+        </li>
+    </ul>
+</div>

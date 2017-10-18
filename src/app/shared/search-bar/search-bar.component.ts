@@ -2,13 +2,13 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-    selector: 'nav-bar',
+    selector: 'search-bar',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: ['./nav-bar.component.css'],
-    templateUrl: './nav-bar.component.html'
+    styleUrls: ['./search-bar.component.css'],
+    templateUrl: './search-bar.component.html'
 })
 
-export class NavBarComponent {
+export class SearchBarComponent {
     public isCollapsed = true;
 
     public linkList = [

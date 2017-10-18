@@ -1,22 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" [routerLink]="['/']">Blog Demo</a>
-    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"  data-target="#navbarNavDropdown">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<div class="row">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" [routerLink]="['/']">
+            <img class="logo" src="assets/icon/logo.png" alt="">
+        </a>
+        <button class="navbar-toggler text-dark" type="button" (click)="isCollapsed = !isCollapsed" data-target="#navbarNavDropdown">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div [ngbCollapse]="isCollapsed" class="dropdown-menu dropdown-menu-right bg-dark">
-        <li *ngFor="let link of linkList">
-            <a (click)="isCollapsed = !isCollapsed" class="nav-link text-light" [routerLink]="link.linkPath" [routerLinkActive]="['router-link-active']"
-                [routerLinkActiveOptions]="{exact:true}">{{link.linkName}}
-            </a>
-        </li>
-    </div>
-
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item" *ngFor="let link of linkList">
-                <a class="nav-link text-light" [routerLink]="link.linkPath" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">{{link.linkName}}</a>
+        <div [ngbCollapse]="isCollapsed" class="dropdown-menu dropdown-menu-right">
+            <li *ngFor="let link of linkList">
+                <a (click)="isCollapsed = !isCollapsed" class="nav-link" [routerLink]="link.linkPath" [routerLinkActive]="['router-link-active']"
+                    [routerLinkActiveOptions]="{exact:true}">
+                    <h1 class="font-weight-bold">{{link.linkName}}</h1>
+                </a>
             </li>
-        </ul>
-    </div>
-</nav>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" *ngFor="let link of linkList">
+                    <a class="nav-link" [routerLink]="link.linkPath" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">
+                        <div>
+                            <h4>{{link.linkName}}
+                                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>

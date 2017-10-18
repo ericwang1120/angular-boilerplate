@@ -1,0 +1,13 @@
+.search-bar-form{
+    padding:10px 0 9px 10px;
+}
+
+.btn-search{
+    background-color:#d87e01
+}
+.btn-search:hover{
+    background-color: #f19608;
+}
+.search-bar-container{
+    background-color: #fbcc48;    
+}

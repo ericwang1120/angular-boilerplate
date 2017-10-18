@@ -1,1 +1,20 @@
-/*styles for home content only*/
+.home-container{
+    padding-top:25px;
+}
+
+.home-container-background{
+    background-color: #efefef;
+}
+
+.row-full{
+    padding-top:25px;
+    padding-bottom:25px;
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+}
+
+.row-full.grey-background{
+    background-color: #efefef;    
+}

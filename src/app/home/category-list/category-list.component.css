@@ -1,0 +1,11 @@
+.category-list-container{
+    padding:20px 30px 20px 20px;
+}
+
+.category-list-background{
+    background-color:white;
+}
+
+li{
+    list-style-type: none;
+}
