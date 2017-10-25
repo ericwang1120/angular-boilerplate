@@ -8,13 +8,14 @@ import { HomeComponent } from './home.component';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { reducers } from '../ngrx/counters/reducers';
-import { CounterEffects } from '../ngrx/counters/effects/counter';
-import { CounterService } from '../ngrx/counters/services/counter.service';
+import { reducers } from '../ngrx/listings/reducers';
+import { ListingEffects } from '../ngrx/listings/effects/listing';
+import { ListingService } from '../ngrx/listings/services/listing.service';
 import { SubNavComponent } from './sub-nav';
 import { CategoryListComponent } from './category-list/category-list.component';
-import { ProductCarouselComponent }
-  from '../shared-components/product-carousel/product-carousel.component';
+import { ProductCarouselComponent } from
+  '../shared-components/product-carousel/product-carousel.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,11 +28,12 @@ import { ProductCarouselComponent }
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
-    // StoreModule.forFeature('counters', reducers),
-    // EffectsModule.forFeature([CounterEffects]),
+    NgbModule,
+    StoreModule.forFeature('listings', reducers),
+    EffectsModule.forFeature([ListingEffects]),
   ],
   providers: [
-    CounterService
+    ListingService
   ]
 })
 export class HomeModule {

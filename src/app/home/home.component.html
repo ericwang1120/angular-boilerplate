@@ -1,16 +1,22 @@
-<div class="row-full grey-background">
+<div class="row grey-background subpage-padding">
     <div class="container">
-        <div class="col-9">
-            <sub-nav></sub-nav>
-            <category-list></category-list>
+        <div class="row">
+            <div class="col-9">
+                <sub-nav></sub-nav>
+                <category-list></category-list>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="row-full">
-    <div class="container">
-        <div class="col-9">
-            <product-carousel [products]="products"></product-carousel>
-        </div>
-    </div>
+<div class="container subpage-padding">
+    <product-carousel [title]="'$1 reserve auctions'" [listing]="oneDollarListing$|async" [products]="products"></product-carousel>
+</div>
+
+<div class="container subpage-padding">
+    <product-carousel [title]="'closing auctions'" [listing]="closingListing$|async" [products]="products"></product-carousel>
+</div>
+
+<div class="container subpage-padding">
+    <product-carousel [title]="'latest auctions'" [listing]="latestListing$|async" [products]="products"></product-carousel>
 </div>

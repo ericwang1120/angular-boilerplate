@@ -3,6 +3,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const MODULES = [
     SharedModule,
@@ -11,5 +12,6 @@ export const MODULES = [
     NgbModule.forRoot(),
     StoreDevtoolsModule.instrument({
         maxAge: 25 //  Retains last 25 states
-    })
+    }),
+    BrowserAnimationsModule
 ];

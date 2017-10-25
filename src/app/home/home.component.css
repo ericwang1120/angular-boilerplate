@@ -6,15 +6,11 @@
     background-color: #efefef;
 }
 
-.row-full{
-    padding-top:25px;
-    padding-bottom:25px;
-    width: 100vw;
-    position: relative;
-    margin-left: -50vw;
-    left: 50%;
+.subpage-padding{
+    padding-top:10px;
+    padding-bottom:10px;
 }
 
-.row-full.grey-background{
+.grey-background{
     background-color: #efefef;    
 }

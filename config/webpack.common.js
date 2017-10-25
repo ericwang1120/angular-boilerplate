@@ -35,7 +35,7 @@ const METADATA = {
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer(),
   HMR: HMR,
-  AOT: AOT
+  AOT: AOT,
 };
 
 /**

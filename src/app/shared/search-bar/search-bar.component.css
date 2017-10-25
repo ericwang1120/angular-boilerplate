@@ -1,5 +1,5 @@
 .search-bar-form{
-    padding:10px 0 9px 10px;
+    padding:10px 10px 10px 10px;
 }
 
 .btn-search{
@@ -8,6 +8,6 @@
 .btn-search:hover{
     background-color: #f19608;
 }
-.search-bar-container{
+.search-bar-background{
     background-color: #fbcc48;    
 }

@@ -25,13 +25,21 @@ const PORT = process.env.PORT || 3000;
 const PUBLIC = process.env.PUBLIC_DEV || HOST + ':' + PORT;
 const AOT = process.env.BUILD_AOT || helpers.hasNpmFlag('aot');
 const HMR = helpers.hasProcessFlag('hot');
+const API_URL = process.env.API_URL = 'https://api.tmsandbox.co.nz/v1/';
+const OAUTH_CONSUMER_KEY = process.env.OAUTH_CONSUMER_KEY = '8B20849DB33FF06A6414B137A1711171';
+const OAUTH_TOKEN = process.env.OAUTH_TOKEN = '92F308F345BAFBBF784C64E8E84DB8E2';
+const OAUTH_SIGNATURE = process.env.OAUTH_SIGNATURE = '6C00BF7EE7BD65443D96BABA6202E87C&FF659FA37593F1F66D1D6EF003909A52';
 const METADATA = {
   host: HOST,
   port: PORT,
   public: PUBLIC,
   ENV: ENV,
   HMR: HMR,
-  AOT: AOT
+  AOT: AOT,
+  API_URL: API_URL,
+  OAUTH_CONSUMER_KEY: OAUTH_CONSUMER_KEY,
+  OAUTH_TOKEN: OAUTH_TOKEN,
+  OAUTH_SIGNATURE: OAUTH_SIGNATURE
 };
 
 
@@ -43,7 +51,7 @@ const METADATA = {
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
 module.exports = function (options) {
-  return webpackMerge(commonConfig({env: ENV}), {
+  return webpackMerge(commonConfig({ env: ENV }), {
 
     /**
      * Developer tool to enhance debugging
@@ -142,7 +150,11 @@ module.exports = function (options) {
         'HMR': METADATA.HMR,
         'process.env.ENV': JSON.stringify(METADATA.ENV),
         'process.env.NODE_ENV': JSON.stringify(METADATA.ENV),
-        'process.env.HMR': METADATA.HMR
+        'process.env.HMR': METADATA.HMR,
+        'API_URL': JSON.stringify(METADATA.API_URL),
+        'OAUTH_CONSUMER_KEY': JSON.stringify(METADATA.OAUTH_CONSUMER_KEY),
+        'OAUTH_TOKEN': JSON.stringify(METADATA.OAUTH_TOKEN),
+        'OAUTH_SIGNATURE': JSON.stringify(METADATA.OAUTH_SIGNATURE),
       }),
 
       // new DllBundlesPlugin({
@@ -239,7 +251,7 @@ module.exports = function (options) {
       *
       * See: https://webpack.github.io/docs/webpack-dev-server.html
       */
-      setup: function(app) {
+      setup: function (app) {
         // For example, to define custom handlers for some paths:
         // app.get('/some/path', function(req, res) {
         //   res.json({ custom: 'response' });
