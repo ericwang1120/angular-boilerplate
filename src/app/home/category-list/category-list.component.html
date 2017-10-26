@@ -1,7 +1,7 @@
 <div class="row category-list-container category-list-background">
     <ul class="col">
         <li class="" *ngFor="let category of categoryList.slice(0,7)">
-            <a [routerLink]="''">
+            <a [routerLink]="category.link">
                 {{ category.title}}
             </a>
         </li>

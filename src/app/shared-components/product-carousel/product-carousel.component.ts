@@ -5,7 +5,6 @@ import {
 import { Product } from '../../ngrx/products/models/product';
 import { Listing } from '../../ngrx/listings/models/listing';
 import { SingleListing } from '../../ngrx/listings/models/single-listing';
-import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Router } from '@angular/router';
 
 @Component({

@@ -9,14 +9,22 @@
     </div>
 </div>
 
-<div class="container subpage-padding">
-    <product-carousel [title]="'$1 reserve auctions'" [listing]="oneDollarListing$|async" [products]="products"></product-carousel>
+<div *ngIf="listingLoading$|async">
+    <div class="container subpage-padding">
+        <i class="fa fa-spinner fa-spin fa-5x" aria-hidden="true"></i>
+    </div>
 </div>
 
-<div class="container subpage-padding">
-    <product-carousel [title]="'closing auctions'" [listing]="closingListing$|async" [products]="products"></product-carousel>
-</div>
+<div *ngIf="!(listingLoading$|async)">
+    <div class="container subpage-padding">
+        <product-carousel [title]="'$1 reserve auctions'" [listing]="oneDollarListing$|async" [products]="products"></product-carousel>
+    </div>
 
-<div class="container subpage-padding">
-    <product-carousel [title]="'latest auctions'" [listing]="latestListing$|async" [products]="products"></product-carousel>
+    <div class="container subpage-padding">
+        <product-carousel [title]="'closing auctions'" [listing]="closingListing$|async" [products]="products"></product-carousel>
+    </div>
+
+    <div class="container subpage-padding">
+        <product-carousel [title]="'latest auctions'" [listing]="latestListing$|async" [products]="products"></product-carousel>
+    </div>
 </div>

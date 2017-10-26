@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   public oneDollarListing$: Observable<Listing>;
   public closingListing$: Observable<Listing>;
   public latestListing$: Observable<Listing>;
+  public listingLoading$: Observable<boolean>;
 
   constructor(
     private store: Store<fromListings.State>
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
     this.oneDollarListing$ = store.select(fromListings.getOneDollarListing);
     this.closingListing$ = store.select(fromListings.getClosingListing);
     this.latestListing$ = store.select(fromListings.getLatestListing);
+    this.listingLoading$ = store.select(fromListings.getLoading);
   }
 
   public ngOnInit(): void {
@@ -33,5 +35,4 @@ export class HomeComponent implements OnInit {
     this.store.dispatch(new listing.SearchClosing());
     this.store.dispatch(new listing.SearchLatest());
   }
-
 }
