@@ -1,0 +1,30 @@
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
+import { Injectable } from '@angular/core';
+import { Effect, Actions } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { of } from 'rxjs/observable/of';
+import { {{properCase odd}}Service } from '../services/{{dashCase odd}}'
+
+import * as {{camelCase odd}} from '../actions/{{dashCase odd}}';
+
+@Injectable()
+export class {{properCase odd}}Effects {
+    @Effect()
+    public load$: Observable<Action> = this.actions$
+        .ofType<{{camelCase odd}}.Load>({{camelCase odd}}.LOAD)
+        .switchMap(() => {
+            return this.{{camelCase odd}}Service
+                .load()
+                .map((result) => new {{camelCase odd}}.LoadSuccess(result))
+                .catch((err) => of(new {{camelCase odd}}.LoadFail(err)));
+        });
+
+    constructor(
+        private actions$: Actions,
+        private {{camelCase odd}}Service: {{properCase odd}}Service,
+    ) {
+    }
+}
