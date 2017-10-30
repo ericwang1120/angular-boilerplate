@@ -1,0 +1,32 @@
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
+{{#if odd}}
+// ngrx
+import { Store } from '@ngrx/store';
+import * as from{{properCase plural}} from '../ngrx/{{dashCase plural}}/reducers';
+import * as {{camelCase odd}} from '../ngrx/{{dashCase plural}}/actions/{{dashCase odd}}';
+import { {{properCase odd}} } from '../ngrx/{{dashCase plural}}/models/{{dashCase odd}}';
+
+{{/if}}
+@Component({
+  selector: 'app-{{dashCase name}}',
+  styleUrls: ['./{{dashCase name}}.component.scss'],
+  templateUrl: './{{dashCase name}}.component.html'
+})
+export class {{properCase name}}Component implements OnInit {
+  public {{camelCase plural}}$: Observable<{{properCase odd}}[]>;
+
+  constructor(
+    private store: Store<from{{properCase plural}}.State>
+  ) {
+    this.{{camelCase plural}}$ = store.select(from{{properCase plural}}.get{{properCase plural}});
+  }
+
+  public ngOnInit(): void {
+    this.store.dispatch(new {{camelCase odd}}.Load());
+  }
+}
