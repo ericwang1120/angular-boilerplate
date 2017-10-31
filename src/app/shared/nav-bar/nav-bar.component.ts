@@ -12,9 +12,6 @@ export class NavBarComponent {
     public isCollapsed = true;
 
     public linkList = [
-        { linkPath: '/click-example-page', linkName: 'Browse' },
-        { linkPath: '/click-example-page', linkName: 'Sell' },
-        { linkPath: '/click-example-page', linkName: 'My Trade Me' },
-        { linkPath: '/click-example-page', linkName: 'Community' },
+        { linkPath: '/click-example', linkName: 'Stream Thinking' },
     ];
 }

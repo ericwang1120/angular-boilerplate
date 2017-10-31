@@ -1,7 +1,7 @@
 {
   "name": "angular-starter",
   "version": "6.0.0",
-  "description": "An Angular Webpack Starter kit featuring Angular (Router, Http, Forms, Services, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack by AngularClass",
+  "description": "An Angular Boilerplate kit featuring Angular (Router, Http, Forms, Services, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack based on angular-starter",
   "keywords": [
     "angular",
     "angular2",
@@ -171,10 +171,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AngularClass/angular-starter.git"
+    "url": "https://github.com/ericwang1120/angular-boilerplate.git"
   },
   "bugs": {
-    "url": "https://github.com/AngularClass/angular-starter/issues"
+    "url": "https://github.com/ericwang1120/angular-boilerplate/issues"
   },
   "engines": {
     "node": ">= 4.2.1",

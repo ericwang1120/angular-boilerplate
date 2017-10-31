@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 
 import { routes } from './click-example-page.routes';
 import { ClickExamplePageComponent } from './click-example-page.component';
-import { SearchBarComponent } from './search-bar';
 import { ResultTableComponent } from './result-table';
 
 import { StoreModule } from '@ngrx/store';
@@ -13,6 +12,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { reducers } from '../ngrx/counters/reducers';
 import { CounterEffects } from '../ngrx/counters/effects/counter';
 import { CounterService } from '../ngrx/counters/services/counter.service';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +20,8 @@ import { CounterService } from '../ngrx/counters/services/counter.service';
      * Components / Directives/ Pipes
      */
     ClickExamplePageComponent,
+    ResultTableComponent,
     SearchBarComponent,
-    ResultTableComponent
   ],
   imports: [
     CommonModule,

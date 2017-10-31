@@ -7,7 +7,8 @@ import * as counter from '../ngrx/counters/actions/counter';
 
 @Component({
   selector: 'click-example-page',
-  templateUrl: './click-example-page.component.html'
+  templateUrl: './click-example-page.component.html',
+  styleUrls:['./click-example-page.component.css'],
 })
 export class ClickExamplePageComponent {
 

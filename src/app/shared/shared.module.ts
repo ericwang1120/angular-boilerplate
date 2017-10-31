@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NavBarComponent } from './nav-bar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SearchBarComponent } from './search-bar/search-bar.component';
 
 // ngrx
 import { StoreModule } from '@ngrx/store';
@@ -15,8 +14,7 @@ import { CategoryService } from '../ngrx/categories/services/category.service';
 
 @NgModule({
   declarations: [
-    NavBarComponent,
-    SearchBarComponent
+    NavBarComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +27,7 @@ import { CategoryService } from '../ngrx/categories/services/category.service';
   providers: [
     CategoryService
   ],
-  exports: [NavBarComponent, SearchBarComponent]
+  exports: [NavBarComponent]
 })
 export class SharedModule {
 }

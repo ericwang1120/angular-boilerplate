@@ -6,7 +6,11 @@ a:hover{
     color:#0099e6
 }
 
-.search-bar-container{
-    margin-bottom: 12px;
+.container-fluid
+{
+    padding: 0
 }
 
+.top-space{
+    margin-top: 15px;
+}
