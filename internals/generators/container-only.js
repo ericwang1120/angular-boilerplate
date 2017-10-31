@@ -20,39 +20,30 @@ module.exports = {
   actions: function (data) {
     let actions = [];
 
+    // create container components
     actions.push({
       type: 'add',
       path: '../../src/app/{{dashCase name}}/{{dashCase name}}.module.ts',
-      templateFile: './templates/container/container.module.ts.hbs'
-    });
+      templateFile: './templates/component/module.ts.hbs'
+    }, {
+        type: 'add',
+        path: '../../src/app/{{dashCase name}}/{{dashCase name}}.component.ts',
+        templateFile: './templates/component/component.ts.hbs'
+      }, {
+        type: 'add',
+        path: '../../src/app/{{dashCase name}}/{{dashCase name}}.component.html',
+        templateFile: './templates/component/component.html.hbs'
+      }, {
+        type: 'add',
+        path: '../../src/app/{{dashCase name}}/{{dashCase name}}.scss',
+        templateFile: './templates/component/component.scss.hbs'
+      }, {
+        type: 'add',
+        path: '../../src/app/{{dashCase name}}/index.ts',
+        templateFile: './templates/component/index.ts.hbs'
+      }
+    );
 
     return actions;
-
-    // [{
-    //   type: 'add',
-    //   path: '../../src/app/{{dashCase name}}/{{dashCase name}}.module.ts',
-    //   templateFile: './container.ts.hbs'
-    // }
-    //   , {
-    //   type: 'add',
-    //   path: '../../src/app/ngrx/{{dashCase plural}}/models/{{dashCase odd}}.ts',
-    //   templateFile: './ngrx/models/model.ts.hbs'
-    // }, {
-    //   type: 'add',
-    //   path: '../../src/app/ngrx/{{dashCase plural}}/effects/{{dashCase odd}}.ts',
-    //   templateFile: './ngrx/effects/effects.ts.hbs'
-    // }, {
-    //   type: 'add',
-    //   path: '../../src/app/ngrx/{{dashCase plural}}/services/{{dashCase odd}}.ts',
-    //   templateFile: './ngrx/services/service.ts.hbs'
-    // }, {
-    //   type: 'add',
-    //   path: '../../src/app/ngrx/{{dashCase plural}}/reducers/{{dashCase plural}}.ts',
-    //   templateFile: './ngrx/reducers/reducers.ts.hbs'
-    // }, {
-    //   type: 'add',
-    //   path: '../../src/app/ngrx/{{dashCase plural}}/reducers/index.ts',
-    //   templateFile: './ngrx/reducers/index.ts.hbs'
-    // }]
   }
 }

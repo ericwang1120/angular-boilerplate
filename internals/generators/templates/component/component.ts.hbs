@@ -17,7 +17,8 @@ import { {{properCase odd}} } from '../ngrx/{{dashCase plural}}/models/{{dashCas
   styleUrls: ['./{{dashCase name}}.component.scss'],
   templateUrl: './{{dashCase name}}.component.html'
 })
-export class {{properCase name}}Component implements OnInit {
+export class {{properCase name}}Component{{#if odd}} implements OnInit{{/if}} {
+  {{#if odd}}
   public {{camelCase plural}}$: Observable<{{properCase odd}}[]>;
 
   constructor(
@@ -29,4 +30,5 @@ export class {{properCase name}}Component implements OnInit {
   public ngOnInit(): void {
     this.store.dispatch(new {{camelCase odd}}.Load());
   }
+  {{/if}}
 }

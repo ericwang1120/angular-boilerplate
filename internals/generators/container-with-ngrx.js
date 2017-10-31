@@ -13,68 +13,75 @@ module.exports = {
     type: 'input',
     name: 'odd',
     default: 'odd',
-    message: 'Type in odd name of the resource',
+    message: 'Type in odd name of ngrx',
   }, {
     type: 'input',
     name: 'plural',
-    message: 'Type in plural name of the resource',
+    message: 'Type in plural name of ngrx',
     default: 'plural',
+  }, {
+    type: 'confirm',
+    name: 'createNgrx',
+    message: 'Do you need creating ngrx?',
+    default: 'true',
   }],
 
   actions: function (data) {
     let actions = [];
 
-    actions.push(
-      {
-        type: 'add',
-        path: '../../src/app/{{dashCase name}}/{{dashCase name}}.module.ts',
-        templateFile: './templates/container/container.module.ts.hbs'
-      }, {
+    // create container components
+    actions.push({
+      type: 'add',
+      path: '../../src/app/{{dashCase name}}/{{dashCase name}}.module.ts',
+      templateFile: './templates/component/module.ts.hbs'
+    }, {
         type: 'add',
         path: '../../src/app/{{dashCase name}}/{{dashCase name}}.component.ts',
-        templateFile: './templates/container/container.component.ts.hbs'
+        templateFile: './templates/component/component.ts.hbs'
       }, {
         type: 'add',
         path: '../../src/app/{{dashCase name}}/{{dashCase name}}.component.html',
-        templateFile: './templates/container/container.component.html.hbs'
+        templateFile: './templates/component/component.html.hbs'
       }, {
         type: 'add',
         path: '../../src/app/{{dashCase name}}/{{dashCase name}}.scss',
-        templateFile: './templates/container/container.component.scss.hbs'
+        templateFile: './templates/component/component.scss.hbs'
       }, {
         type: 'add',
         path: '../../src/app/{{dashCase name}}/index.ts',
-        templateFile: './templates/container/index.ts.hbs'
+        templateFile: './templates/component/index.ts.hbs'
       }
     );
 
-    return actions;
+    // if ngrx is not created, creating ngrx module
+    if (data.createNgrx) {
+      actions.push({
+        type: 'add',
+        path: '../../src/app/ngrx/{{dashCase plural}}/actions/{{dashCase odd}}.ts',
+        templateFile: './templates/ngrx/actions/action.ts.hbs'
+      }, {
+          type: 'add',
+          path: '../../src/app/ngrx/{{dashCase plural}}/models/{{dashCase odd}}.ts',
+          templateFile: './templates/ngrx/models/model.ts.hbs'
+        }, {
+          type: 'add',
+          path: '../../src/app/ngrx/{{dashCase plural}}/effects/{{dashCase odd}}.ts',
+          templateFile: './templates/ngrx/effects/effects.ts.hbs'
+        }, {
+          type: 'add',
+          path: '../../src/app/ngrx/{{dashCase plural}}/services/{{dashCase odd}}.ts',
+          templateFile: './templates/ngrx/services/service.ts.hbs'
+        }, {
+          type: 'add',
+          path: '../../src/app/ngrx/{{dashCase plural}}/reducers/{{dashCase plural}}.ts',
+          templateFile: './templates/ngrx/reducers/reducers.ts.hbs'
+        }, {
+          type: 'add',
+          path: '../../src/app/ngrx/{{dashCase plural}}/reducers/index.ts',
+          templateFile: './templates/ngrx/reducers/index.ts.hbs'
+        });
+    }
 
-    // [{
-    //   type: 'add',
-    //   path: '../../src/app/{{dashCase name}}/{{dashCase name}}.module.ts',
-    //   templateFile: './container.ts.hbs'
-    // }
-    //   , {
-    //   type: 'add',
-    //   path: '../../src/app/ngrx/{{dashCase plural}}/models/{{dashCase odd}}.ts',
-    //   templateFile: './ngrx/models/model.ts.hbs'
-    // }, {
-    //   type: 'add',
-    //   path: '../../src/app/ngrx/{{dashCase plural}}/effects/{{dashCase odd}}.ts',
-    //   templateFile: './ngrx/effects/effects.ts.hbs'
-    // }, {
-    //   type: 'add',
-    //   path: '../../src/app/ngrx/{{dashCase plural}}/services/{{dashCase odd}}.ts',
-    //   templateFile: './ngrx/services/service.ts.hbs'
-    // }, {
-    //   type: 'add',
-    //   path: '../../src/app/ngrx/{{dashCase plural}}/reducers/{{dashCase plural}}.ts',
-    //   templateFile: './ngrx/reducers/reducers.ts.hbs'
-    // }, {
-    //   type: 'add',
-    //   path: '../../src/app/ngrx/{{dashCase plural}}/reducers/index.ts',
-    //   templateFile: './ngrx/reducers/index.ts.hbs'
-    // }]
+    return actions;
   }
 }
