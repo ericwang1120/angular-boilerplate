@@ -1,10 +1,20 @@
 <mat-card class="bg-white">
     <mat-card-title>
-        <strong>User Repositories</strong>
+        Repositories from
+        <strong>{{userName}}</strong>
     </mat-card-title>
-    <mat-nav-list class="bg-light">
-        <a mat-list-item href="{{repository.html_url}}" *ngFor="let repository of repositories">
-            {{repository.name}}
-        </a>
+
+    <i *ngIf="loading" class="fa fa-spinner fa-spin fa-5x" aria-hidden="true"></i>
+
+    <div *ngIf="(repositories.length<=0) && (!loading)">
+        No content
+    </div>
+
+    <mat-nav-list *ngIf="(repositories.length>0) && (!loading)" class="bg-light">
+        <div *ngIf="repositories.length>0">
+            <a mat-list-item href="{{repository.html_url}}" *ngFor="let repository of repositories">
+                {{repository.name}}
+            </a>
+        </div>
     </mat-nav-list>
 </mat-card>

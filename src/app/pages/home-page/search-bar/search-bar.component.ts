@@ -13,6 +13,4 @@ import { Observable } from 'rxjs/Observable';
 })
 export class SearchBarComponent {
   @Output('load') public load = new EventEmitter();
-
-  public userName: string = 'ericwang1120';
 }

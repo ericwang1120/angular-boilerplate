@@ -13,4 +13,6 @@ import { Repository } from '../../../core/ngrx/repositories/models/repository';
 })
 export class RepositoryTableComponent {
   @Input('repositories') public repositories: Repository[];
+  @Input('loading') public loading: boolean;
+  @Input('userName') public userName: string;
 }

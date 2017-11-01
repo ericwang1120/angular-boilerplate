@@ -34,6 +34,14 @@ export function reducer(
             };
         }
 
+        case {{camelCase odd}}.LOAD_FAIL: {
+            return {
+                loaded: true,
+                loading: false,
+                {{camelCase plural}}: [],
+            };
+        }
+
         default: {
             return state;
         }

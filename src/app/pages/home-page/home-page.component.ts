@@ -19,6 +19,8 @@ export class HomePageComponent implements OnInit {
   public repositories$: Observable<Repository[]>;
   public loading$: Observable<boolean>;
 
+  public userName: string;
+
   constructor(
     private store: Store<fromRepositories.State>
   ) {
@@ -31,6 +33,7 @@ export class HomePageComponent implements OnInit {
   }
 
   public load(userName: string) {
+    this.userName = userName;
     this.store.dispatch(new repository.Load(userName));
   }
 

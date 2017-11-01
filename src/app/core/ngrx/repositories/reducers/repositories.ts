@@ -34,6 +34,14 @@ export function reducer(
             };
         }
 
+        case repository.LOAD_FAIL: {
+            return {
+                loaded: true,
+                loading: false,
+                repositories: [],
+            };
+        }
+
         default: {
             return state;
         }

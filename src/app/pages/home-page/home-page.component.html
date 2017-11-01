@@ -5,11 +5,9 @@
         </div>
     </div>
 
-    <i *ngIf="loading$|async" class="fa fa-spinner fa-spin fa-5x" aria-hidden="true"></i>
-
-    <div *ngIf="!(loading$|async)" class="row">
+    <div class="row">
         <div class="col">
-            <app-repository-table [repositories]="repositories$|async">
+            <app-repository-table [userName]="userName" [repositories]="repositories$|async" [loading]="loading$|async">
             </app-repository-table>
         </div>
     </div>

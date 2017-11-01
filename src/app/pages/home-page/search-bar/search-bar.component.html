@@ -1,6 +1,6 @@
 <mat-form-field class="example-full-width">
-    <input (input)="userName=$event.target.value" matInput placeholder="Type in a username" value="{{userName}}">
+    <input (input)="load.emit($event.target.value)" matInput placeholder="Type in a github username" value="ericwang1120">
 </mat-form-field>
-<button mat-raised-button color="primary" type="button" (click)="load.emit(userName)">
+<!-- <button mat-raised-button color="primary" type="button" (click)="load.emit(userName)">
     Search
-</button>
+</button> -->

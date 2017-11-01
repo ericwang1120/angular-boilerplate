@@ -15,6 +15,7 @@ export class RepositoryEffects {
     @Effect()
     public load$: Observable<Action> = this.actions$
         .ofType<repository.Load>(repository.LOAD)
+        .debounceTime(500)
         .map((action) => action.payload)
         .switchMap((payload) => {
             return this.repositoryService
