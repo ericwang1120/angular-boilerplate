@@ -25,7 +25,7 @@ const PORT = process.env.PORT || 3000;
 const PUBLIC = process.env.PUBLIC_DEV || HOST + ':' + PORT;
 const AOT = process.env.BUILD_AOT || helpers.hasNpmFlag('aot');
 const HMR = helpers.hasProcessFlag('hot');
-const API_URL = process.env.API_URL = 'https://api.tmsandbox.co.nz/v1/';
+const API_URL = process.env.API_URL = 'https://api.github.com/';
 const METADATA = {
   host: HOST,
   port: PORT,

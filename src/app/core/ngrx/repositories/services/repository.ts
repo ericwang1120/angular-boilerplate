@@ -8,9 +8,9 @@ import { jwt } from '../../utilities/helpers/jwt';
 export class RepositoryService {
   constructor(private http: Http) { }
 
-  public load(): Observable<Repository[]> {
+  public load(userName: string): Observable<Repository[]> {
     return this.http
-      .get(`${API_URL}Repository.JSON`, jwt())
+      .get(`${API_URL}users/${userName}/repos`, jwt())
       .map((res) => {
         return res.json();
       });

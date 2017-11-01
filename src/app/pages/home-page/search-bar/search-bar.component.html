@@ -1,0 +1,6 @@
+<mat-form-field class="example-full-width">
+    <input (input)="userName=$event.target.value" matInput placeholder="Type in a username" value="{{userName}}">
+</mat-form-field>
+<button mat-raised-button color="primary" type="button" (click)="load.emit(userName)">
+    Search
+</button>

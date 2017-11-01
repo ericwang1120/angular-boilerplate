@@ -12,6 +12,6 @@ export class NavBarComponent {
     public isCollapsed = true;
 
     public linkList = [
-        { linkPath: '/click-example', linkName: 'Stream Thinking' },
+        { linkPath: '/home', linkName: 'Home' },
     ];
 }

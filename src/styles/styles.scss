@@ -3,4 +3,9 @@
 @import 'variables';
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 @import '../../node_modules/font-awesome/scss/font-awesome.scss';
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+
+body{
+    background-color: $background-color;
+}

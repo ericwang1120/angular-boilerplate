@@ -15,9 +15,10 @@ export class RepositoryEffects {
     @Effect()
     public load$: Observable<Action> = this.actions$
         .ofType<repository.Load>(repository.LOAD)
-        .switchMap(() => {
+        .map((action) => action.payload)
+        .switchMap((payload) => {
             return this.repositoryService
-                .load()
+                .load(payload)
                 .map((result) => new repository.LoadSuccess(result))
                 .catch((err) => of(new repository.LoadFail(err)));
         });

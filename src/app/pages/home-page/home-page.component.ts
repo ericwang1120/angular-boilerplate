@@ -17,14 +17,21 @@ import { Repository } from '../../core/ngrx/repositories/models/repository';
 })
 export class HomePageComponent implements OnInit {
   public repositories$: Observable<Repository[]>;
+  public loading$: Observable<boolean>;
 
   constructor(
     private store: Store<fromRepositories.State>
   ) {
     this.repositories$ = store.select(fromRepositories.getRepositories);
+    this.loading$ = store.select(fromRepositories.getLoading);
   }
 
   public ngOnInit(): void {
-    this.store.dispatch(new repository.Load());
+    this.load('ericwang1120');
   }
+
+  public load(userName: string) {
+    this.store.dispatch(new repository.Load(userName));
+  }
+
 }

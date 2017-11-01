@@ -1,0 +1,10 @@
+<mat-card class="bg-white">
+    <mat-card-title>
+        <strong>User Repositories</strong>
+    </mat-card-title>
+    <mat-nav-list class="bg-light">
+        <a mat-list-item href="{{repository.html_url}}" *ngFor="let repository of repositories">
+            {{repository.name}}
+        </a>
+    </mat-nav-list>
+</mat-card>

@@ -33,7 +33,7 @@ const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 8080;
 const AOT = process.env.BUILD_AOT || helpers.hasNpmFlag('aot');
-const API_URL = process.env.API_URL = 'https://api.tmsandbox.co.nz/v1/';
+const API_URL = process.env.API_URL = 'https://api.github.com/';
 const METADATA = {
   host: HOST,
   port: PORT,

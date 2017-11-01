@@ -1,1 +1,16 @@
-ate
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <app-search-bar (load)="load($event)"></app-search-bar>
+        </div>
+    </div>
+
+    <i *ngIf="loading$|async" class="fa fa-spinner fa-spin fa-5x" aria-hidden="true"></i>
+
+    <div *ngIf="!(loading$|async)" class="row">
+        <div class="col">
+            <app-repository-table [repositories]="repositories$|async">
+            </app-repository-table>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 ### About
-This repository contains souce code of [Trademe mockup](https://tmmockup.github.io/).
+This repository contains source code of [Trademe mockup](https://tmmockup.github.io/).
 
 ### Functionalities
 

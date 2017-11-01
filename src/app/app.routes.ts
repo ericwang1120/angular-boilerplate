@@ -5,6 +5,6 @@ import { DataResolver } from './app.resolver';
 
 export const ROUTES: Routes = [
   { path: '', loadChildren: './pages/home-page#HomePageModule' },
-  // { path: 'click-example', loadChildren: './pages/click-example-page#ClickExamplePageModule' },
+  { path: 'home', loadChildren: './pages/home-page#HomePageModule' },
   { path: '**', component: NoContentComponent },
 ];

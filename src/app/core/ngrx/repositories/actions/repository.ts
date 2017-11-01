@@ -9,6 +9,8 @@ export const RESET_STATE = '[Repository] Reset State';
 
 export class Load implements Action {
     public readonly type = LOAD;
+
+    constructor(public payload: string) { }
 }
 
 export class LoadSuccess implements Action {
@@ -20,7 +22,7 @@ export class LoadSuccess implements Action {
 export class LoadFail implements Action {
     public readonly type = LOAD_FAIL;
 
-    constructor(public payload: any) {}
+    constructor(public payload: any) { }
 }
 
 export type Actions = Load

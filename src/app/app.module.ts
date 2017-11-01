@@ -32,6 +32,7 @@ import { NoContentComponent } from './pages/no-content';
 
 import '../styles/styles.scss';
 import { MODULES } from './app.imports';
+import 'hammerjs';
 
 // Application wide providers
 const APP_PROVIDERS = [
