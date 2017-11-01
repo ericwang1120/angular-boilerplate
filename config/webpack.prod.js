@@ -34,9 +34,6 @@ const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 8080;
 const AOT = process.env.BUILD_AOT || helpers.hasNpmFlag('aot');
 const API_URL = process.env.API_URL = 'https://api.tmsandbox.co.nz/v1/';
-const OAUTH_CONSUMER_KEY = process.env.OAUTH_CONSUMER_KEY = '8B20849DB33FF06A6414B137A1711171';
-const OAUTH_TOKEN = process.env.OAUTH_TOKEN = '92F308F345BAFBBF784C64E8E84DB8E2';
-const OAUTH_SIGNATURE = process.env.OAUTH_SIGNATURE = '6C00BF7EE7BD65443D96BABA6202E87C&FF659FA37593F1F66D1D6EF003909A52';
 const METADATA = {
   host: HOST,
   port: PORT,
@@ -44,9 +41,6 @@ const METADATA = {
   HMR: false,
   AOT: AOT,
   API_URL: API_URL,
-  OAUTH_CONSUMER_KEY: OAUTH_CONSUMER_KEY,
-  OAUTH_TOKEN: OAUTH_TOKEN,
-  OAUTH_SIGNATURE: OAUTH_SIGNATURE
 };
 
 module.exports = function (env) {
@@ -179,9 +173,6 @@ module.exports = function (env) {
           'process.env.NODE_ENV': JSON.stringify(METADATA.ENV),
           'process.env.HMR': METADATA.HMR,
           'API_URL': JSON.stringify(METADATA.API_URL),
-          'OAUTH_CONSUMER_KEY': JSON.stringify(METADATA.OAUTH_CONSUMER_KEY),
-          'OAUTH_TOKEN': JSON.stringify(METADATA.OAUTH_TOKEN),
-          'OAUTH_SIGNATURE': JSON.stringify(METADATA.OAUTH_SIGNATURE),
         }),
 
         /**

@@ -7,9 +7,9 @@ import { Observable } from 'rxjs/Observable';
 {{#if odd}}
 // ngrx
 import { Store } from '@ngrx/store';
-import * as from{{properCase plural}} from '../ngrx/{{dashCase plural}}/reducers';
-import * as {{camelCase odd}} from '../ngrx/{{dashCase plural}}/actions/{{dashCase odd}}';
-import { {{properCase odd}} } from '../ngrx/{{dashCase plural}}/models/{{dashCase odd}}';
+import * as from{{properCase plural}} from '../../core/ngrx/{{dashCase plural}}/reducers';
+import * as {{camelCase odd}} from '../../core/ngrx/{{dashCase plural}}/actions/{{dashCase odd}}';
+import { {{properCase odd}} } from '../../core/ngrx/{{dashCase plural}}/models/{{dashCase odd}}';
 
 {{/if}}
 @Component({

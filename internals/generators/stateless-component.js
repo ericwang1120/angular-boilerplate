@@ -35,7 +35,7 @@ module.exports = {
         templateFile: './templates/component/component.html.hbs'
       }, {
         type: 'add',
-        path: '../../src/app/{{path}}/{{dashCase name}}/{{dashCase name}}.scss',
+        path: '../../src/app/{{path}}/{{dashCase name}}/{{dashCase name}}.component.scss',
         templateFile: './templates/component/component.scss.hbs'
       }
     );

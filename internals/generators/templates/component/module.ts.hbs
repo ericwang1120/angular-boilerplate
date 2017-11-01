@@ -2,14 +2,18 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { {{properCase name}}Component } from './{{dashCase name}}.component';
+
+// lazy loading
+import { RouterModule } from '@angular/router';
+import { routes } from './{{dashCase name}}.routes';
 {{#if odd}}
 
 // ngrx
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { reducers } from '../ngrx/{{dashCase plural}}/reducers';
-import { {{properCase odd}}Effects } from '../ngrx/{{dashCase plural}}/effects/{{dashCase odd}}';
-import { {{properCase odd}}Service } from '../ngrx/{{dashCase plural}}/services/{{dashCase odd}}';
+import { reducers } from '../../core/ngrx/{{dashCase plural}}/reducers';
+import { {{properCase odd}}Effects } from '../../core/ngrx/{{dashCase plural}}/effects/{{dashCase odd}}';
+import { {{properCase odd}}Service } from '../../core/ngrx/{{dashCase plural}}/services/{{dashCase odd}}';
 {{/if}}
 
 @NgModule({
@@ -19,6 +23,7 @@ import { {{properCase odd}}Service } from '../ngrx/{{dashCase plural}}/services/
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule.forChild(routes),
     {{#if odd}}
     StoreModule.forFeature('{{camelCase plural}}', reducers),
     EffectsModule.forFeature([{{properCase odd}}Effects]),

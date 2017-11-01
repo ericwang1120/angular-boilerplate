@@ -32,24 +32,28 @@ module.exports = {
     // create container components
     actions.push({
       type: 'add',
-      path: '../../src/app/{{dashCase name}}/{{dashCase name}}.module.ts',
+      path: '../../src/app/pages/{{dashCase name}}/{{dashCase name}}.module.ts',
       templateFile: './templates/component/module.ts.hbs'
     }, {
         type: 'add',
-        path: '../../src/app/{{dashCase name}}/{{dashCase name}}.component.ts',
+        path: '../../src/app/pages/{{dashCase name}}/{{dashCase name}}.component.ts',
         templateFile: './templates/component/component.ts.hbs'
       }, {
         type: 'add',
-        path: '../../src/app/{{dashCase name}}/{{dashCase name}}.component.html',
+        path: '../../src/app/pages/{{dashCase name}}/{{dashCase name}}.component.html',
         templateFile: './templates/component/component.html.hbs'
       }, {
         type: 'add',
-        path: '../../src/app/{{dashCase name}}/{{dashCase name}}.scss',
+        path: '../../src/app/pages/{{dashCase name}}/{{dashCase name}}.component.scss',
         templateFile: './templates/component/component.scss.hbs'
       }, {
         type: 'add',
-        path: '../../src/app/{{dashCase name}}/index.ts',
+        path: '../../src/app/pages/{{dashCase name}}/index.ts',
         templateFile: './templates/component/index.ts.hbs'
+      }, {
+        type: 'add',
+        path: '../../src/app/pages/{{dashCase name}}/{{dashCase name}}.routes.ts',
+        templateFile: './templates/component/component.routes.ts.hbs'
       }
     );
 
@@ -57,27 +61,27 @@ module.exports = {
     if (data.createNgrx) {
       actions.push({
         type: 'add',
-        path: '../../src/app/ngrx/{{dashCase plural}}/actions/{{dashCase odd}}.ts',
+        path: '../../src/app/core/ngrx/{{dashCase plural}}/actions/{{dashCase odd}}.ts',
         templateFile: './templates/ngrx/actions/action.ts.hbs'
       }, {
           type: 'add',
-          path: '../../src/app/ngrx/{{dashCase plural}}/models/{{dashCase odd}}.ts',
+          path: '../../src/app/core/ngrx/{{dashCase plural}}/models/{{dashCase odd}}.ts',
           templateFile: './templates/ngrx/models/model.ts.hbs'
         }, {
           type: 'add',
-          path: '../../src/app/ngrx/{{dashCase plural}}/effects/{{dashCase odd}}.ts',
+          path: '../../src/app/core/ngrx/{{dashCase plural}}/effects/{{dashCase odd}}.ts',
           templateFile: './templates/ngrx/effects/effects.ts.hbs'
         }, {
           type: 'add',
-          path: '../../src/app/ngrx/{{dashCase plural}}/services/{{dashCase odd}}.ts',
+          path: '../../src/app/core/ngrx/{{dashCase plural}}/services/{{dashCase odd}}.ts',
           templateFile: './templates/ngrx/services/service.ts.hbs'
         }, {
           type: 'add',
-          path: '../../src/app/ngrx/{{dashCase plural}}/reducers/{{dashCase plural}}.ts',
+          path: '../../src/app/core/ngrx/{{dashCase plural}}/reducers/{{dashCase plural}}.ts',
           templateFile: './templates/ngrx/reducers/reducers.ts.hbs'
         }, {
           type: 'add',
-          path: '../../src/app/ngrx/{{dashCase plural}}/reducers/index.ts',
+          path: '../../src/app/core/ngrx/{{dashCase plural}}/reducers/index.ts',
           templateFile: './templates/ngrx/reducers/index.ts.hbs'
         });
     }

@@ -28,7 +28,7 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { NoContentComponent } from './no-content';
+import { NoContentComponent } from './pages/no-content';
 
 import '../styles/styles.scss';
 import { MODULES } from './app.imports';

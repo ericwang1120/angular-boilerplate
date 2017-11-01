@@ -24,7 +24,7 @@ module.exports = {
 
   actions: [{
     type: 'add',
-    path: '../../src/app/ngrx/{{dashCase plural}}/actions/{{dashCase odd}}.ts',
+    path: '../../src/app/core/ngrx/{{dashCase plural}}/actions/{{dashCase odd}}.ts',
     templateFile: './templates/ngrx/actions/action.ts.hbs'
   }, {
     type: 'add',
@@ -32,19 +32,19 @@ module.exports = {
     templateFile: './templates/ngrx/models/model.ts.hbs'
   }, {
     type: 'add',
-    path: '../../src/app/ngrx/{{dashCase plural}}/effects/{{dashCase odd}}.ts',
+    path: '../../src/app/core/ngrx/{{dashCase plural}}/effects/{{dashCase odd}}.ts',
     templateFile: './templates/ngrx/effects/effects.ts.hbs'
   }, {
     type: 'add',
-    path: '../../src/app/ngrx/{{dashCase plural}}/services/{{dashCase odd}}.ts',
+    path: '../../src/app/core/ngrx/{{dashCase plural}}/services/{{dashCase odd}}.ts',
     templateFile: './templates/ngrx/services/service.ts.hbs'
   }, {
     type: 'add',
-    path: '../../src/app/ngrx/{{dashCase plural}}/reducers/{{dashCase plural}}.ts',
+    path: '../../src/app/core/ngrx/{{dashCase plural}}/reducers/{{dashCase plural}}.ts',
     templateFile: './templates/ngrx/reducers/reducers.ts.hbs'
   }, {
     type: 'add',
-    path: '../../src/app/ngrx/{{dashCase plural}}/reducers/index.ts',
+    path: '../../src/app/core/ngrx/{{dashCase plural}}/reducers/index.ts',
     templateFile: './templates/ngrx/reducers/index.ts.hbs'
   }]
 }

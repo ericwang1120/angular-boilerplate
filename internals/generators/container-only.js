@@ -23,24 +23,28 @@ module.exports = {
     // create container components
     actions.push({
       type: 'add',
-      path: '../../src/app/{{dashCase name}}/{{dashCase name}}.module.ts',
+      path: '../../src/app/pages/{{dashCase name}}/{{dashCase name}}.module.ts',
       templateFile: './templates/component/module.ts.hbs'
     }, {
         type: 'add',
-        path: '../../src/app/{{dashCase name}}/{{dashCase name}}.component.ts',
+        path: '../../src/app/pages/{{dashCase name}}/{{dashCase name}}.component.ts',
         templateFile: './templates/component/component.ts.hbs'
       }, {
         type: 'add',
-        path: '../../src/app/{{dashCase name}}/{{dashCase name}}.component.html',
+        path: '../../src/app/pages/{{dashCase name}}/{{dashCase name}}.component.html',
         templateFile: './templates/component/component.html.hbs'
       }, {
         type: 'add',
-        path: '../../src/app/{{dashCase name}}/{{dashCase name}}.scss',
+        path: '../../src/app/pages/{{dashCase name}}/{{dashCase name}}.component.scss',
         templateFile: './templates/component/component.scss.hbs'
       }, {
         type: 'add',
-        path: '../../src/app/{{dashCase name}}/index.ts',
+        path: '../../src/app/pages/{{dashCase name}}/index.ts',
         templateFile: './templates/component/index.ts.hbs'
+      }, {
+        type: 'add',
+        path: '../../src/app/pages/{{dashCase name}}/{{dashCase name}}.routes.ts',
+        templateFile: './templates/component/component.routes.ts.hbs'
       }
     );
 
