@@ -1,8 +1,29 @@
 ### About
-This repository contains source code of [Trademe mockup](https://tmmockup.github.io/).
+The boilerplate is based on [Angular Starter](https://github.com/AngularClass/angular-starter). 
 
-### Functionalities
+### External Functionalities
 
-Listing  
-Category  
-The repo is based on [Angular Starter](https://github.com/AngularClass/angular-starter).
+External libraies are provided:
+
+- [flexbox grid](https://github.com/kristoferjoseph/flexboxgrid)
+- [angular material](https://material.angular.io/)
+- [font-awesome](http://fontawesome.io/)
+- [ngrx](https://github.com/ngrx/platform)
+- Generators written in [plop](https://github.com/amwmedia/plop)
+
+### Generators
+run
+```
+npm run generate
+```
+then select what you need.  
+
+- container-with-ngrx: generate a container(page) module, and import ngrx module. You can choose to create the ngrx module or not.
+
+- container-only: generate a container(page) module without ngrx module.
+
+- ngrx-only: generate a ngrx module
+
+- stateless-component: generate a stateless component
+
+
