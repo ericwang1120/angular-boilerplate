@@ -18,12 +18,15 @@ External libraies are provided:
 ```
 git clone https://github.com/ericwang1120/angular-boilerplate.git
 ```
+
 2. 
 ```
 cd angular-boilerplate
 ```
+
 3. 
 ``` npm install ``` or ``` yarn install ```  
+
 4. 
 ```
 npm run start
