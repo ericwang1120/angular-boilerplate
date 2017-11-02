@@ -2,10 +2,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-    selector: 'nav-bar',
-    encapsulation: ViewEncapsulation.None,
-    styleUrls: ['./nav-bar.component.css'],
-    templateUrl: './nav-bar.component.html'
+    selector: 'app-navbar',
+    styleUrls: ['./navbar.component.scss'],
+    templateUrl: './navbar.component.html'
 })
 
 export class NavBarComponent {

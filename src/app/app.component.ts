@@ -12,7 +12,7 @@ import {
  * Top Level Component
  */
 @Component({
-  selector: 'app',
+  selector: 'angular-boilerplate-app',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
     './app.component.scss'

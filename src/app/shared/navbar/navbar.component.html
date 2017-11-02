@@ -1,0 +1,13 @@
+<nav class="navbar-header">
+    <a mat-button routerLink="/" aria-label="Angular Boilerplate">
+        <span>Angular Boilerplate</span>
+    </a>
+    <a mat-button class="navbar-hide-small" *ngFor="let link of linkList" [routerLink]="link.linkPath">
+        {{link.linkName}}
+    </a>
+    <div></div>
+</nav>
+
+<nav class="navbar navbar-show-small">
+    <a mat-button class="navbar-link" *ngFor="let link of linkList" [routerLink]="link.linkPath">{{link.linkName}}</a>
+</nav>

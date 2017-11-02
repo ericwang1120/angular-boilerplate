@@ -1,16 +1,33 @@
-a{
-    color:#06c
+angular-boilerplate-app {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
-a:hover{
-    color:#0099e6
+app-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 }
 
-.container-fluid
-{
-    padding: 0;
+angular-boilerplate-app > app-home-page {
+    overflow-y: auto;
 }
+  
+@media (max-width: 720px) {
 
-.top-space{
-    margin-top: 15px;
+    angular-boilerplate-app {
+        top: 120px;
+    }
+
+    angular-boilerplate-app > app-home-page {
+        overflow-y: visible;
+    }
 }
+  
