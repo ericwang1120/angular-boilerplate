@@ -23,23 +23,14 @@ git clone https://github.com/ericwang1120/angular-boilerplate.git
 cd angular-boilerplate
 ```
 3. 
-```
-npm install
-``` or
-```
-yarn install
-```
+``` npm install ``` or ``` yarn install ```
 4. 
 ```
 npm run start
 ```
 
 ### Generators
-run
-```
-npm run generate
-```
-then select what you need.  
+run ```npm run generate``` then select what you need.  
 
 - container-with-ngrx: generate a container(page) module, and import ngrx module. You can choose to create the ngrx module or not.
 
