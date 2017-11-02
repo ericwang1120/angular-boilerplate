@@ -11,6 +11,29 @@ External libraies are provided:
 - [ngrx](https://github.com/ngrx/platform)
 - Generators written in [plop](https://github.com/amwmedia/plop)
 
+
+### How to use
+
+1. 
+```
+git clone https://github.com/ericwang1120/angular-boilerplate.git
+```
+2. 
+```
+cd angular-boilerplate
+```
+3. 
+```
+npm install
+``` or
+```
+yarn install
+```
+4. 
+```
+npm run start
+```
+
 ### Generators
 run
 ```
