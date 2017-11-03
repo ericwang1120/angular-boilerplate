@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit {
   public repositories$: Observable<Repository[]>;
   public loading$: Observable<boolean>;
 
-  public userName: string;
+  public userName = 'EricWang1120';
 
   constructor(
     private store: Store<fromRepositories.State>
@@ -29,7 +29,7 @@ export class HomePageComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.load('ericwang1120');
+    this.load(this.userName);
   }
 
   public load(userName: string) {

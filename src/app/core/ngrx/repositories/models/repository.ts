@@ -6,7 +6,7 @@ export interface Repository {
 
 export function generateMockRepository(): Repository {
     return {
-        id: 0,
+        id: 1,
         name: '',
         url: '',
     };

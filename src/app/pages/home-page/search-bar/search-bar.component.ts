@@ -2,6 +2,7 @@ import {
   Component,
   OnInit,
   Output,
+  Input,
   EventEmitter
 } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
@@ -12,5 +13,6 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './search-bar.component.html'
 })
 export class SearchBarComponent {
+  @Input('userName') public userName: string;
   @Output('load') public load = new EventEmitter();
 }

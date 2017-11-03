@@ -5,7 +5,6 @@ import { Repository } from '../models/repository';
 export const LOAD = '[Repository] Load';
 export const LOAD_SUCCESS = '[Repository] Load Success';
 export const LOAD_FAIL = '[Repository] Load Fail';
-export const RESET_STATE = '[Repository] Reset State';
 
 export class Load implements Action {
     public readonly type = LOAD;

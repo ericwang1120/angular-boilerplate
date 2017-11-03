@@ -6,7 +6,7 @@ import { Effect, Actions } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs/observable/of';
-import { RepositoryService } from '../services/repository'
+import { RepositoryService } from '../services/repository';
 
 import * as repository from '../actions/repository';
 

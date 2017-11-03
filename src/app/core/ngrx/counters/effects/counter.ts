@@ -12,7 +12,7 @@ import { Scheduler } from 'rxjs/Scheduler';
 import { async } from 'rxjs/scheduler/async';
 import { empty } from 'rxjs/observable/empty';
 import { of } from 'rxjs/observable/of';
-import { CounterService } from '../services/counter.service'
+import { CounterService } from '../services/counter.service';
 
 import * as counter from '../actions/counter';
 
