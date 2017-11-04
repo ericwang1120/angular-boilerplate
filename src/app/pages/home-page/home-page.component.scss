@@ -1,0 +1,24 @@
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 70px);
+}
+
+app-search-bar{
+    width:80vw;
+}
+
+app-repository-table{
+    width:80vw;
+}
+
+@media (max-width: 720px){
+    app-repository-table{
+        width:94vw;
+    }
+
+    .flex-container{
+        height: calc(100vh - 120px);
+    }
+}

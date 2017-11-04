@@ -3,7 +3,7 @@ The boilerplate is based on [Angular Starter](https://github.com/AngularClass/an
 
 ### External Functionalities
 
-External libraies are provided:
+External libraries are provided:
 
 - [flexbox grid](https://github.com/kristoferjoseph/flexboxgrid)
 - [angular material](https://material.angular.io/)
@@ -25,7 +25,13 @@ cd angular-boilerplate
 ```
 
 3. 
-``` npm install ``` or ``` yarn install ```  
+``` 
+npm install
+``` 
+or  
+``` 
+yarn install 
+```  
 
 4. 
 ```
@@ -42,5 +48,3 @@ run ```npm run generate``` then select what you need.
 - ngrx-only: generate a ngrx module
 
 - stateless-component: generate a stateless component
-
-

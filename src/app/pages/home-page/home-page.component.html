@@ -1,17 +1,6 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-12
-        col-sm-10 col-sm-offset-1
-        col-md-10 col-md-offset-1
-        col-lg-8 col-lg-offset-2">
-            <div class="box">
-                <app-search-bar (load)="load($event)" [userName]="userName">
-                </app-search-bar>
-            </div>
-            <div class="box">
-                <app-repository-table [userName]="userName" [repositories]="repositories$|async" [loading]="loading$|async">
-                </app-repository-table>
-            </div>
-        </div>
-    </div>
+<div class="flex-container">
+    <app-search-bar (load)="load($event)" [userName]="userName">
+    </app-search-bar>
+    <app-repository-table [userName]="userName" [repositories]="repositories$|async" [loading]="loading$|async">
+    </app-repository-table>
 </div>
