@@ -13,7 +13,3 @@ $accent:  mat-palette($mat-pink, A200, A100, A400);
 $theme: mat-light-theme($primary, $accent);
 
 @include angular-boilerplate-app-theme($theme);
-
-body{
-    background-color: $background-color;
-}

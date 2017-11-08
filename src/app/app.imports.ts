@@ -11,5 +11,5 @@ export const MODULES = [
     StoreDevtoolsModule.instrument({
         maxAge: 25 //  Retains last 25 states
     }),
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
 ];

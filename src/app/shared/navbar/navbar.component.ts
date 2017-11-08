@@ -12,5 +12,6 @@ export class NavBarComponent {
 
     public linkList = [
         { linkPath: '/home', linkName: 'Home' },
+        { linkPath: '/chart-page', linkName: 'Charts' },
     ];
 }
