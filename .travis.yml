@@ -6,13 +6,6 @@ cache:
   directories:
     - node_modules
 
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
-
 node_js:
   - "6"
   - "7"
@@ -29,9 +22,6 @@ before_install:
 
 install:
   - npm install
-
-after_install:
-  - npm rebuild node-sass
 
 before_script:
   - node ./node_modules/protractor/bin/webdriver-manager update
