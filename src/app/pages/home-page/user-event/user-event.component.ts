@@ -1,6 +1,5 @@
 import { Event } from './../../../core/ngrx/events/models/event';
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import _ from 'lodash';
 
 @Component({
   selector: 'app-user-event',
@@ -13,8 +12,8 @@ export class UserEventComponent {
   @Input('userName') public userName: string;
   @Input('events') public events: Event[];
 
-  get slicedEvents() {
-    return this.events.slice(0, 5);
+  get slicedEvents(): Event[] {
+    return this.events ? this.events.slice(0, 5) : [];
   }
 
 }
