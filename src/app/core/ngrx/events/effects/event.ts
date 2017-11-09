@@ -15,6 +15,7 @@ export class EventEffects {
     @Effect()
     public load$: Observable<Action> = this.actions$
         .ofType<event.Load>(event.LOAD)
+        .debounceTime(500)
         .map((action) => action.payload)
         .switchMap((payload) => {
             return this.eventService

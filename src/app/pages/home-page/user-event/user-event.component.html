@@ -9,7 +9,11 @@
     <i *ngIf="loading" class="fa fa-spinner fa-spin fa-5x" aria-hidden="true">
     </i>
 
-    <mat-list *ngIf="!loading">
+    <div *ngIf="(slicedEvents.length<=0) && (!loading)">
+      No content
+    </div>
+
+    <mat-list *ngIf="(slicedEvents.length>0) && (!loading)">
       <mat-list-item *ngFor="let event of slicedEvents">
         <h4 mat-line>{{event.type}} </h4>
         <p mat-line>{{event.created_at|date:'short'}}</p>
