@@ -1,0 +1,11 @@
+mat-card-content {
+    height: 75vh;
+    overflow-y: auto;
+}
+
+@media (max-width: 720px) {
+    mat-card-content {
+        height: auto;
+        overflow-y: none;
+    }
+}
