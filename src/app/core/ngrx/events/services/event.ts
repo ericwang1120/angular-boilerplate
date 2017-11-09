@@ -3,7 +3,6 @@ import { Event } from '../models/event';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { jwt } from '../../utilities/helpers/jwt';
-import { allKeyToCamelCase } from '../../utilities/helpers/allKeyToCamelCase';
 
 @Injectable()
 export class EventService {
