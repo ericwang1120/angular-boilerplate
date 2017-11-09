@@ -4,7 +4,6 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { decorateModuleRef } from './app/environment';
 import { hmrModule  } from '@angularclass/hmr';
-
 /**
  * App Module
  * our top level module that holds all of our components

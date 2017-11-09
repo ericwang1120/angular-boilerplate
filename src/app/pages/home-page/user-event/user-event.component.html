@@ -1,0 +1,12 @@
+<i *ngIf="loading" class="fa fa-spinner fa-spin fa-5x" aria-hidden="true">
+</i>
+<mat-card>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let event of slicedEvents">
+        <h4 mat-line>{{event.created_at|date:'short'}}</h4>
+        <p mat-line>{{event.type}} </p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

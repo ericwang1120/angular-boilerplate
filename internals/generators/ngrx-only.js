@@ -28,7 +28,7 @@ module.exports = {
     templateFile: './templates/ngrx/actions/action.ts.hbs'
   }, {
     type: 'add',
-    path: '../../src/app/ngrx/{{dashCase plural}}/models/{{dashCase odd}}.ts',
+    path: '../../src/app/core/ngrx/{{dashCase plural}}/models/{{dashCase odd}}.ts',
     templateFile: './templates/ngrx/models/model.ts.hbs'
   }, {
     type: 'add',
