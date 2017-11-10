@@ -1,12 +1,37 @@
-.flex-container{
+.flex-container {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: space-around;
 }
 
-.chart-display{
-    width:50vw;
+.chart-display,
+.data-table {
+    width: 50vw;
+    padding: 10px;
 }
 
-.data-table{
-    width:50vw;
+.data-table {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+table {
+    width: 94%;
+    text-align: center;
+}
+
+button {
+    width: 100px;
+}
+
+@media (max-width: 720px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    .chart-display,
+    .data-table {
+        width: 94vw;
+    }
 }

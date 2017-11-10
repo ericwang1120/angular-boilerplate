@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/ericwang1120/angular-boilerplate.svg?branch=master)](https://travis-ci.org/ericwang1120/angular-boilerplate)
+[![Build Status](https://travis-ci.org/ericwang1120/angular-boilerplate.svg)](https://travis-ci.org/ericwang1120/angular-boilerplate)
+[![GitHub version](https://badge.fury.io/gh/ericwang1120%2Fangular-boilerplate.svg)](https://badge.fury.io/gh/angularclass%2Fangular-starter)
 
 
 ### About

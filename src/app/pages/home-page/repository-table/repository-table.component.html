@@ -11,7 +11,7 @@
             No content
         </div>
 
-        <mat-nav-list *ngIf="(repositories.length>0) && (!loading)" class="bg-light">
+        <mat-nav-list *ngIf="(repositories.length>0) && (!loading)">
             <div *ngIf="repositories.length>0">
                 <a mat-list-item href="{{repository.html_url}}" *ngFor="let repository of repositories">
                     {{repository.name}}
