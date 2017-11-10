@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ericwang1120/angular-boilerplate.svg?branch=master)](https://travis-ci.org/Angulaericwang1120rClass/angular-boilerplate)
+[![Build Status](https://travis-ci.org/ericwang1120/angular-boilerplate.svg?branch=master)](https://travis-ci.org/ericwang1120/angular-boilerplate)
 
 
 ### About
