@@ -1,26 +1,38 @@
+$navbar-height: 70px;
+$container-height: calc(100vh - #{$navbar-height});
+$container-padding:10px;
+$container-margin:10px;
+$left-bar-width:260px;
+$search-bar-height:50px;
+$event-container-height-to-minus:$search-bar-height+($container-padding + $container-margin) * 4;
+$table-width-to-minus:$left-bar-width+($container-padding + $container-margin) * 4;
 .flex-container {
     display: flex;
     flex-flow: column wrap;
-    height: calc(100vh - 70px);
+    height: $container-height;
     align-items: center;
 }
 
 app-search-bar,
 app-user-event {
-    padding: 10px 10px;
-    width: 250px;
+    padding: $container-padding;
+    margin: $container-margin;
+    width: $left-bar-width;
 }
 
 app-search-bar {
-    height: 50px;
+    height: $search-bar-height;
 }
 
 app-user-event {
-    height: calc(100vh - 160px);
+    height: calc(#{$container-height} - #{$event-container-height-to-minus});
 }
 
 app-repository-table {
-    width: 80%;
+    height: calc(#{$container-height} - (#{$container-padding} + #{$container-margin}) * 2);
+    width: calc(100vw - #{$table-width-to-minus});
+    padding: $container-padding;
+    margin: $container-margin;
 }
 
 @media (max-width: 720px) {
@@ -28,6 +40,9 @@ app-repository-table {
     app-search-bar,
     app-user-event {
         width: 94vw;
+    }
+    app-user-event {
+        height: 100vh;
     }
     .flex-container {
         flex-wrap: nowrap;
