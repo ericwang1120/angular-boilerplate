@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/ericwang1120/angular-boilerplate.svg?branch=master)](https://travis-ci.org/Angulaericwang1120rClass/angular-boilerplate)
+
+
 ### About
 The boilerplate is based on [Angular Starter](https://github.com/AngularClass/angular-starter). 
 
