@@ -15,6 +15,7 @@ $table-width-to-minus:$left-bar-width+($container-padding + $container-margin) *
 
 app-search-bar,
 app-user-event {
+    display: flex;
     padding: $container-padding;
     margin: $container-margin;
     width: $left-bar-width;
@@ -29,6 +30,7 @@ app-user-event {
 }
 
 app-repository-table {
+    display: flex;
     height: calc(#{$container-height} - (#{$container-padding} + #{$container-margin}) * 2);
     width: calc(100vw - #{$table-width-to-minus});
     padding: $container-padding;
@@ -40,11 +42,11 @@ app-repository-table {
     app-search-bar,
     app-user-event {
         width: 94vw;
+        height: auto;        
     }
-    app-user-event {
-        height: 100vh;
-    }
+
     .flex-container {
         flex-wrap: nowrap;
+        height: auto;
     }
 }

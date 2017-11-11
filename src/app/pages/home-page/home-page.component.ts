@@ -14,6 +14,10 @@ import * as fromEvents from '../../core/ngrx/events/reducers';
 import * as event from '../../core/ngrx/events/actions/event';
 import { Event } from './../../core/ngrx/events/models/event';
 
+import * as fromUsers from '../../core/ngrx/users/reducers';
+import * as user from '../../core/ngrx/users/actions/user';
+import { User } from './../../core/ngrx/users/models/user';
+
 @Component({
   selector: 'app-home-page',
   styleUrls: ['./home-page.component.scss'],
@@ -26,6 +30,9 @@ export class HomePageComponent implements OnInit {
   public events$: Observable<Event[]>;
   public eventLoading$: Observable<boolean>;
 
+  public currentUser$: Observable<User>;
+  public userLoading$: Observable<boolean>;
+
   public userName = 'EricWang1120';
 
   constructor(
@@ -37,6 +44,10 @@ export class HomePageComponent implements OnInit {
     // event
     this.events$ = store.select(fromEvents.getEvents);
     this.eventLoading$ = store.select(fromEvents.getLoading);
+
+    // users
+    this.currentUser$ = store.select(fromUsers.getCurrentUser);
+    this.userLoading$ = store.select(fromUsers.getLoading);
   }
 
   public ngOnInit(): void {
@@ -47,6 +58,7 @@ export class HomePageComponent implements OnInit {
     this.userName = userName;
     this.store.dispatch(new repository.Load(userName));
     this.store.dispatch(new event.Load(userName));
+    this.store.dispatch(new user.Load(userName));
   }
 
 }

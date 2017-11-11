@@ -6,7 +6,10 @@ import { NgModule } from '@angular/core';
 import { HomePageComponent } from './home-page.component';
 import { RepositoryTableComponent } from './repository-table/repository-table.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
-import { MatButtonModule, MatListModule, MatInputModule, MatCardModule }
+import {
+  MatButtonModule, MatListModule, MatInputModule, MatCardModule,
+  MatChipsModule
+}
   from '@angular/material';
 import { UserEventComponent } from './user-event/user-event.component';
 
@@ -22,12 +25,15 @@ import * as fromEvents from '../../core/ngrx/events/reducers';
 import { RepositoryEffects } from '../../core/ngrx/repositories/effects/repository';
 import { RepositoryService } from '../../core/ngrx/repositories/services/repository';
 
+import * as fromUsers from '../../core/ngrx/users/reducers';
+import { UserEffects } from '../../core/ngrx/users/effects/user';
+import { UserService } from '../../core/ngrx/users/services/user';
+
 @NgModule({
   declarations: [
     HomePageComponent,
     RepositoryTableComponent,
-    SearchBarComponent
-    ,
+    SearchBarComponent,
     UserEventComponent
   ],
   imports: [
@@ -36,15 +42,21 @@ import { RepositoryService } from '../../core/ngrx/repositories/services/reposit
     RouterModule.forChild(routes),
     StoreModule.forFeature('repositories', reducers),
     StoreModule.forFeature('events', fromEvents.reducers),
-    EffectsModule.forFeature([RepositoryEffects, EventEffects]),
+    StoreModule.forFeature('users', fromUsers.reducers),
+    EffectsModule.forFeature([
+      RepositoryEffects,
+      EventEffects,
+      UserEffects]),
     MatButtonModule,
     MatInputModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatChipsModule
   ],
   providers: [
     RepositoryService,
-    EventService
+    EventService,
+    UserService
   ]
 })
 export class HomePageModule {

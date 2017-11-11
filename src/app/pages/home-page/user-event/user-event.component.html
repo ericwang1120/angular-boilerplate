@@ -1,10 +1,16 @@
 <mat-card>
   <mat-card-content>
-    <mat-card-header>
-      <mat-card-title>
-        <strong>Events</strong>
-      </mat-card-title>
+    <mat-card-header *ngIf="!userLoading">
+      <div mat-card-avatar class="header-image" [style.backgroundImage]="'url(' + currentUser.avatar_url + ')'"></div>
+      <mat-card-title>{{currentUser.name}}</mat-card-title>
+      <mat-card-subtitle>
+        Followers {{currentUser.followers}}
+      </mat-card-subtitle>
     </mat-card-header>
+
+    <mat-card-title>
+      <strong>Events</strong>
+    </mat-card-title>
 
     <i *ngIf="loading" class="fa fa-spinner fa-spin fa-5x" aria-hidden="true">
     </i>

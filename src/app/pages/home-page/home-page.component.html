@@ -1,7 +1,7 @@
 <div class="flex-container">
     <app-search-bar (load)="load($event)" [userName]="userName">
     </app-search-bar>
-    <app-user-event [userName]="userName" [events]="events$|async" [loading]="eventLoading$|async">
+    <app-user-event [userName]="userName" [currentUser]="currentUser$|async" [userLoading]="userLoading$|async" [events]="events$|async" [loading]="eventLoading$|async">
     </app-user-event>
     <app-repository-table [userName]="userName" [repositories]="repositories$|async" [loading]="loading$|async">
     </app-repository-table>

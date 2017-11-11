@@ -1,3 +1,4 @@
+import { User } from './../../../core/ngrx/users/models/user';
 import { Event } from './../../../core/ngrx/events/models/event';
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
@@ -11,6 +12,8 @@ export class UserEventComponent {
   @Input('loading') public loading: boolean;
   @Input('userName') public userName: string;
   @Input('events') public events: Event[];
+  @Input('currentUser') public currentUser: User;
+  @Input('userLoading') public userLoading: boolean;
 
   get slicedEvents(): Event[] {
     return this.events ? this.events.slice(0, 5) : [];
