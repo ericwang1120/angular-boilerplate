@@ -1,16 +1,16 @@
-import { reducer } from './repositories';
-import * as fromRepositories from './repositories';
-import { Load, LoadFail, LoadSuccess } from '../actions/repository';
-import { Repository, generateMockRepository } from '../models/repository';
+import { reducer } from './events';
+import * as fromEvents from './events';
+import { Load, LoadFail, LoadSuccess } from '../actions/event';
+import { Event, generateMockEvent } from '../models/event';
 
-describe('RepositoriesReducer', () => {
-    const repository1 = generateMockRepository();
-    const repository2 = { ...repository1, id: 222 };
-    const repository3 = { ...repository1, id: 333 };
-    const initialState: fromRepositories.State = {
+describe('EventsReducer', () => {
+    const event1 = generateMockEvent();
+    const event2 = { ...event1, id: '222' };
+    const event3 = { ...event1, id: '333' };
+    const initialState: fromEvents.State = {
         loaded: false,
         loading: false,
-        repositories: [],
+        events: [],
     };
 
     describe('undefined action', () => {
@@ -25,7 +25,7 @@ describe('RepositoriesReducer', () => {
         const expectedResult = {
             loaded: false,
             loading: true,
-            repositories: [],
+            events: [],
         };
 
         it('should change loading to true', () => {
@@ -41,11 +41,11 @@ describe('RepositoriesReducer', () => {
         const expectedResult = {
             loaded: true,
             loading: false,
-            repositories: [repository2, repository3],
+            events: [event2, event3],
         };
 
-        it('should load repositories', () => {
-            const action = new LoadSuccess([repository2, repository3]);
+        it('should load events', () => {
+            const action = new LoadSuccess([event2, event3]);
 
             const result = reducer(initialState, action);
 
@@ -57,10 +57,10 @@ describe('RepositoriesReducer', () => {
         const expectedResult = {
             loaded: true,
             loading: false,
-            repositories: [],
+            events: [],
         };
 
-        it('return empty array of repositories when load fail', () => {
+        it('return empty array of events when load fail', () => {
             const action = new LoadFail('Error Message');
 
             const result = reducer(initialState, action);
@@ -73,17 +73,17 @@ describe('RepositoriesReducer', () => {
         const expectedResult = {
             loaded: true,
             loading: false,
-            repositories: [],
+            events: [],
         };
 
         it('should return correct selector', () => {
             const loaded = expectedResult.loaded;
             const loading = expectedResult.loading;
-            const repositories = expectedResult.repositories;
+            const events = expectedResult.events;
 
-            expect(fromRepositories.getLoaded(expectedResult)).toEqual(loaded);
-            expect(fromRepositories.getLoading(expectedResult)).toEqual(loading);
-            expect(fromRepositories.getRepositories(expectedResult)).toEqual(repositories);
+            expect(fromEvents.getLoaded(expectedResult)).toEqual(loaded);
+            expect(fromEvents.getLoading(expectedResult)).toEqual(loading);
+            expect(fromEvents.getEvents(expectedResult)).toEqual(events);
         });
     });
 });

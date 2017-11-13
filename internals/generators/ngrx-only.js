@@ -40,6 +40,10 @@ module.exports = {
     templateFile: './templates/ngrx/services/service.ts.hbs'
   }, {
     type: 'add',
+    path: '../../src/app/core/ngrx/{{dashCase plural}}/reducers/{{dashCase plural}}.spec.ts',
+    templateFile: './templates/ngrx/reducers/reducers.spec.ts.hbs'
+  }, {
+    type: 'add',
     path: '../../src/app/core/ngrx/{{dashCase plural}}/reducers/{{dashCase plural}}.ts',
     templateFile: './templates/ngrx/reducers/reducers.ts.hbs'
   }, {

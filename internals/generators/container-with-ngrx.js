@@ -81,6 +81,10 @@ module.exports = {
           templateFile: './templates/ngrx/reducers/reducers.ts.hbs'
         }, {
           type: 'add',
+          path: '../../src/app/core/ngrx/{{dashCase plural}}/reducers/{{dashCase plural}}.spec.ts',
+          templateFile: './templates/ngrx/reducers/reducers.spec.ts.hbs'
+        }, {
+          type: 'add',
           path: '../../src/app/core/ngrx/{{dashCase plural}}/reducers/index.ts',
           templateFile: './templates/ngrx/reducers/index.ts.hbs'
         });
