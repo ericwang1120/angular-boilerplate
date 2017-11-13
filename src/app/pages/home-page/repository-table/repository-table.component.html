@@ -4,9 +4,9 @@
         <strong>{{userName}}</strong>
     </mat-card-title>
 
-    <i *ngIf="loading" class="fa fa-spinner fa-spin fa-5x" aria-hidden="true"></i>
-
     <mat-card-content>
+        <i *ngIf="loading" class="fa fa-spinner fa-spin fa-5x" aria-hidden="true"></i>
+
         <div *ngIf="(repositories.length<=0) && (!loading)">
             No content
         </div>
