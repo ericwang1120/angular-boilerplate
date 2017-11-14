@@ -1,6 +1,9 @@
 [![Build Status](https://travis-ci.org/ericwang1120/angular-boilerplate.svg)](https://travis-ci.org/ericwang1120/angular-boilerplate)
 [![GitHub version](https://badge.fury.io/gh/ericwang1120%2Fangular-boilerplate.svg)](https://badge.fury.io/gh/ericwang1120%2Fangular-boilerplate)
 
+### Homepage
+![](_screenshots/homepage.png)
+
 
 ### About
 The boilerplate is based on [Angular Starter](https://github.com/AngularClass/angular-starter). 
@@ -43,6 +46,8 @@ npm run start
 ```
 
 ### Generators
+![](_screenshots/generator.gif)
+
 run ```npm run generate``` then select what you need.  
 
 - container-with-ngrx: generate a container(page) module, and import ngrx module. You can choose to create the ngrx module or not.
