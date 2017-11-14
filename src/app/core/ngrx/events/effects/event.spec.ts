@@ -2,11 +2,11 @@ import { TestBed } from '@angular/core/testing';
 import { Actions } from '@ngrx/effects';
 import { cold, hot, getTestScheduler } from 'jasmine-marbles';
 import { empty } from 'rxjs/observable/empty';
-import { RepositoryEffects, LOAD_SCHEDULER, LOAD_DEBOUNCE } from './repository';
-import { RepositoryService } from '../services/repository';
+import { EventEffects, LOAD_SCHEDULER, LOAD_DEBOUNCE } from './event';
+import { EventService } from '../services/event';
 import { Observable } from 'rxjs/Observable';
-import { Load, LoadSuccess, LoadFail } from '../actions/repository';
-import { Repository, generateMockRepository } from '../models/repository';
+import { Load, LoadSuccess, LoadFail } from '../actions/event';
+import { Event, generateMockEvent } from '../models/event';
 
 export class TestActions extends Actions {
     constructor() {
@@ -22,18 +22,18 @@ export function getActions() {
     return new TestActions();
 }
 
-describe('RepositoryEffects', () => {
-    let effects: RepositoryEffects;
-    let repositoryService: any;
+describe('EventEffects', () => {
+    let effects: EventEffects;
+    let eventService: any;
     let actions$: TestActions;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
             providers: [
-                RepositoryEffects,
+                EventEffects,
                 {
-                    provide: RepositoryService,
-                    useValue: jasmine.createSpyObj('repositoryService', ['load']),
+                    provide: EventService,
+                    useValue: jasmine.createSpyObj('eventService', ['load']),
                 },
                 { provide: Actions, useFactory: getActions },
                 { provide: LOAD_SCHEDULER, useFactory: getTestScheduler },
@@ -41,24 +41,24 @@ describe('RepositoryEffects', () => {
             ],
         });
 
-        effects = TestBed.get(RepositoryEffects);
-        repositoryService = TestBed.get(RepositoryService);
+        effects = TestBed.get(EventEffects);
+        eventService = TestBed.get(EventService);
         actions$ = TestBed.get(Actions);
     });
 
     describe('load$', () => {
         it('should load successful', () => {
-            const repository1 = generateMockRepository();
-            const repository2 = { ...repository1, id: '222' };
-            const repositories = [repository2, repository2];
+            const event1 = generateMockEvent();
+            const event2 = { ...event1, id: '222' };
+            const events = [event2, event2];
 
             const action = new Load('username');
-            const completion = new LoadSuccess(repositories);
+            const completion = new LoadSuccess(events);
 
             actions$.stream = hot('-a----', { a: action });
-            const response = cold('-a|', { a: repositories });
+            const response = cold('-a|', { a: events });
             const expected = cold('-----b', { b: completion });
-            repositoryService.load = () => response;
+            eventService.load = () => response;
             expect(effects.load$).toBeObservable(expected);
         });
 
@@ -70,7 +70,7 @@ describe('RepositoryEffects', () => {
             actions$.stream = hot('-a----', { a: action });
             const response = cold('-#|', {}, error);
             const expected = cold('-----b', { b: completion });
-            repositoryService.load = () => response;
+            eventService.load = () => response;
 
             expect(effects.load$).toBeObservable(expected);
         });
