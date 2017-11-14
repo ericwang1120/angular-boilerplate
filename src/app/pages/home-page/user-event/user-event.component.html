@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-content>
     <mat-card-header *ngIf="!userLoading">
-      <div mat-card-avatar class="header-image" [style.backgroundImage]="'url(' + currentUser.avatar_url + ')'"></div>
+      <div mat-card-avatar class="header-image" [style.backgroundImage]="getBackground(currentUser.avatar_url)"></div>
       <mat-card-title>{{currentUser.name}}</mat-card-title>
       <mat-card-subtitle>
         Followers {{currentUser.followers}}

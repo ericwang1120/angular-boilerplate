@@ -49,7 +49,7 @@ describe('RepositoryEffects', () => {
     describe('load$', () => {
         it('should load successful', () => {
             const repository1 = generateMockRepository();
-            const repository2 = { ...repository1, id: 222 };
+            const repository2 = { ...repository1, id: '222' };
             const repositories = [repository2, repository2];
 
             const action = new Load('username');

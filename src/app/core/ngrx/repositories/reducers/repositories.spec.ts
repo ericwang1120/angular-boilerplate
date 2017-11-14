@@ -5,8 +5,8 @@ import { Repository, generateMockRepository } from '../models/repository';
 
 describe('RepositoriesReducer', () => {
     const repository1 = generateMockRepository();
-    const repository2 = { ...repository1, id: 222 };
-    const repository3 = { ...repository1, id: 333 };
+    const repository2 = { ...repository1, id: '222' };
+    const repository3 = { ...repository1, id: '333' };
     const initialState: fromRepositories.State = {
         loaded: false,
         loading: false,
