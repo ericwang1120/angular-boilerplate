@@ -9,7 +9,7 @@ export const LOAD_FAIL = '[User] Load Fail';
 export class Load implements Action {
     public readonly type = LOAD;
 
-    constructor(public name: string) { }
+    constructor(public payload: string) { }
 }
 
 export class LoadSuccess implements Action {
