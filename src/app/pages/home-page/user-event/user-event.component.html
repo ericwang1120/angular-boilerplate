@@ -1,5 +1,5 @@
 <mat-card>
-  <mat-card-content>
+  <mat-card-content *ngIf="currentUser">
     <mat-card-header *ngIf="!userLoading">
       <div mat-card-avatar class="header-image" [style.backgroundImage]="getBackground(currentUser.avatar_url)"></div>
       <mat-card-title>{{currentUser.name}}</mat-card-title>
@@ -15,10 +15,6 @@
     <i *ngIf="loading" class="fa fa-spinner fa-spin fa-5x" aria-hidden="true">
     </i>
 
-    <div *ngIf="(slicedEvents.length<=0) && (!loading)">
-      No content
-    </div>
-
     <mat-list *ngIf="(slicedEvents.length>0) && (!loading)">
       <mat-list-item *ngFor="let event of slicedEvents">
         <h4 mat-line>{{event.type}} </h4>
@@ -26,4 +22,8 @@
       </mat-list-item>
     </mat-list>
   </mat-card-content>
+
+  <div *ngIf="!currentUser">
+    No content
+  </div>
 </mat-card>

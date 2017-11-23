@@ -1,4 +1,3 @@
-import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import _ from 'lodash';
 
 export function allKeyToCamelCase(obj) {

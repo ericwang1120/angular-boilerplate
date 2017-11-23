@@ -72,7 +72,8 @@
     "webdriver:update": "webdriver-manager update",
     "webpack-dev-server": "node --max_old_space_size=4096 node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "webpack": "node --max_old_space_size=4096 node_modules/webpack/bin/webpack.js",
-    "generate": "plop --plopfile internals/generators/index.js"
+    "generate": "plop --plopfile internals/generators/index.js",
+    "gen": "gen-ngrx"
   },
   "dependencies": {
     "@angular/animations": "~4.4.4",
@@ -130,6 +131,7 @@
     "extract-text-webpack-plugin": "~3.0.0",
     "file-loader": "^0.11.1",
     "find-root": "^1.0.0",
+    "generate-ngrx": "^0.9.4",
     "gh-pages": "^1.0.0",
     "html-webpack-plugin": "^2.28.0",
     "imports-loader": "^0.7.1",
@@ -186,5 +188,10 @@
   "engines": {
     "node": ">= 4.2.1",
     "npm": ">= 3"
+  },
+  "genNgrx": {
+    "pagesFolder": "./src/app/pages",
+    "baseNgrxPath": "./src/app/core/ngrx",
+    "rootReducerPath": "./src/app/core/ngrx/index.ts"
   }
 }
