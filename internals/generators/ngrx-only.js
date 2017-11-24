@@ -36,6 +36,10 @@ module.exports = {
     templateFile: './templates/ngrx/effects/effects.ts.hbs'
   }, {
     type: 'add',
+    path: '../../src/app/core/ngrx/{{dashCase plural}}/effects/{{dashCase odd}}.spec.ts',
+    templateFile: './templates/ngrx/effects/effects.spec.ts.hbs'
+  }, {
+    type: 'add',
     path: '../../src/app/core/ngrx/{{dashCase plural}}/services/{{dashCase odd}}.ts',
     templateFile: './templates/ngrx/services/service.ts.hbs'
   }, {

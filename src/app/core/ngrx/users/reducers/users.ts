@@ -38,7 +38,7 @@ export function reducer(
             return {
                 loaded: true,
                 loading: false,
-                currentUser: generateMockUser(),
+                currentUser: null,
             };
         }
 

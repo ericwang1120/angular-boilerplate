@@ -1,16 +1,14 @@
-import { reducer } from './repositories';
-import * as fromRepositories from './repositories';
-import { Load, LoadFail, LoadSuccess } from '../actions/repository';
-import { Repository, generateMockRepository } from '../models/repository';
+import { reducer } from './users';
+import * as fromUsers from './users';
+import { Load, LoadFail, LoadSuccess } from '../actions/user';
+import { User, generateMockUser } from '../models/user';
 
-describe('RepositoriesReducer', () => {
-    const repository1 = generateMockRepository();
-    const repository2 = { ...repository1, id: '222' };
-    const repository3 = { ...repository1, id: '333' };
-    const initialState: fromRepositories.State = {
+describe('UsersReducer', () => {
+    const user1 = generateMockUser();
+    const initialState: fromUsers.State = {
         loaded: false,
         loading: false,
-        repositories: [],
+        currentUser: generateMockUser(),
     };
 
     describe('undefined action', () => {
@@ -25,7 +23,7 @@ describe('RepositoriesReducer', () => {
         const expectedResult = {
             loaded: false,
             loading: true,
-            repositories: [],
+            currentUser: generateMockUser(),
         };
 
         it('should change loading to true', () => {
@@ -41,11 +39,11 @@ describe('RepositoriesReducer', () => {
         const expectedResult = {
             loaded: true,
             loading: false,
-            repositories: [repository2, repository3],
+            currentUser: user1,
         };
 
-        it('should load repositories', () => {
-            const action = new LoadSuccess([repository2, repository3]);
+        it('should load current user', () => {
+            const action = new LoadSuccess(user1);
 
             const result = reducer(initialState, action);
 
@@ -57,10 +55,10 @@ describe('RepositoriesReducer', () => {
         const expectedResult = {
             loaded: true,
             loading: false,
-            repositories: [],
+            currentUser: null,
         };
 
-        it('return empty array of repositories when load fail', () => {
+        it('return empty user when load fail', () => {
             const action = new LoadFail('Error Message');
 
             const result = reducer(initialState, action);
@@ -73,17 +71,17 @@ describe('RepositoriesReducer', () => {
         const expectedResult = {
             loaded: true,
             loading: false,
-            repositories: [],
+            currentUser: generateMockUser(),
         };
 
         it('should return correct selector', () => {
             const loaded = expectedResult.loaded;
             const loading = expectedResult.loading;
-            const repositories = expectedResult.repositories;
+            const currentUser = expectedResult.currentUser;
 
-            expect(fromRepositories.getLoaded(expectedResult)).toEqual(loaded);
-            expect(fromRepositories.getLoading(expectedResult)).toEqual(loading);
-            expect(fromRepositories.getRepositories(expectedResult)).toEqual(repositories);
+            expect(fromUsers.getLoaded(expectedResult)).toEqual(loaded);
+            expect(fromUsers.getLoading(expectedResult)).toEqual(loading);
+            expect(fromUsers.getCurrentUser(expectedResult)).toEqual(currentUser);
         });
     });
 });
